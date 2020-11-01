@@ -700,6 +700,11 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
         return instance;
     }
 
+    public void updateAndTrim(){
+        this.updateComputerList();
+        this.trimLabels();
+    }
+
     /**
      * Gets the {@link Jenkins} singleton.
      * {@link #getActiveInstance()} provides the checked versions of the method.
