@@ -700,6 +700,7 @@ public class Jenkins extends AbstractCIBase implements DirectlyModifiableTopLeve
         return instance;
     }
 
+    //new Function
     public void updateAndTrim(){
         this.updateComputerList();
         this.trimLabels();
