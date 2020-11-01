@@ -1,0 +1,5 @@
+Question 1:
+The type of smell presented in this problem is Duplicated Code, which happens when identical code exists in more than one place. It can be fixed by using a function call
+
+Question 3:
+The code smell in this problm is known as "Inappropriate Intimacy", where one class uses internal methods and fields of another class. The solution would be to move the methods to the appropriate class
