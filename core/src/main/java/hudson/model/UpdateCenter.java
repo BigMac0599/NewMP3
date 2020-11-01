@@ -561,7 +561,7 @@ public class UpdateCenter extends AbstractModelObject implements Saveable, OnMas
 
         return new ArrayList<Plugin>(pluginMap.values());
     }
-
+    //New Function
     public void tryAddPluginToMap(Plugin plugin, Map<String,Plugin> pluginMap) {
 
         final Plugin existing = pluginMap.get(plugin.name);
