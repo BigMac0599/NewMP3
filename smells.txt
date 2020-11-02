@@ -3,3 +3,29 @@ The type of smell presented in this problem is Duplicated Code, which happens wh
 
 Question 3:
 The code smell in this problm is known as "Inappropriate Intimacy", where one class uses internal methods and fields of another class. The solution would be to move the methods to the appropriate class
+
+Question 6:
+There was an instance of copy and paste in hudson.model.ProjectTest.java
+The following code was inserted twice at lines 
+
+
+        try{
+            project.doEnable();
+            fail("User should not have permission to build project");
+        }
+        catch(Exception e){
+            if(!(e.getClass().isAssignableFrom(AccessDeniedException2.class))){
+               fail("AccessDeniedException should be thrown.");
+            }
+        } 
+        auth.add(Job.READ, user.getId());
+        auth.add(Job.CONFIGURE, user.getId());
+        auth.add(Jenkins.READ, user.getId());
+        List<HtmlForm> forms = j.createWebClient().login(user.getId(), "password").goTo(project.getUrl()).getForms();
+        for(HtmlForm form:forms){
+            if("enable".equals(form.getAttribute("action"))){
+                j.submit(form);
+            }
+        }
+
+To fix this duplicate code smell, we can simply extract them into a function. Then we can replace all the instances of this code snippet with the function
